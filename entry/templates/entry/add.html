@@ -1,0 +1,21 @@
+{% extends 'entry/base.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <form action="{% url 'add' %}" method="POST">
+                {% csrf_token %}
+                <div class="field">
+                    <div class="control">
+                           {{ form.text }}
+                    </div>
+                    <div class="field is-grouped is-grouped-right">
+                        <div class="control">
+                            <button class="button is-link  btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

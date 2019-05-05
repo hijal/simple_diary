@@ -1,0 +1,16 @@
+{% extends 'entry/base.html' %}
+{% block content %}
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'add' %}" role="button">Add An Entry</a>
+    </p>
+    <ul class="list-group">
+        {% for entry in entries %}
+            <li class="list-group-item">
+                {{ entry.text }}
+                <br>
+                {{ entry.date }}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
